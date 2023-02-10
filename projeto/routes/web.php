@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/admin/stores', [\App\Http\Controllers\Admin\StoreController::class, 'index']);
+Route::get('/admin/stores/create', [\App\Http\Controllers\Admin\StoreController::class, 'create']);
+Route::post('/admin/stores/store', [\App\Http\Controllers\Admin\StoreController::class, 'store']);
