@@ -1,5 +1,6 @@
 <h1>Criar Loja</h1>
-<form action="/admin/stores/store" method="post">
+<form action="{{route('admin.stores.store')}}" method="POST" enctype="multipart/form-data">
+<input type="hidden" name="_token" value="{{csrf_token()}}">
 <div>
     <label>Nome loja</label>
     <input type="text" name="name">
@@ -14,7 +15,7 @@
 </div>
 <div>
     <label>Celular/Whatsapp</label>
-    <input type="text" name="phone_mobile">
+    <input type="text" name="mobile_phone">
 </div>
 <div>
     <label>Slug</label>
@@ -22,7 +23,7 @@
 </div>
 <div>
     <label>Usuário</label>
-    <select name="">
+    <select name="user">
         @foreach($users as $user)
         <option value="{{$user->id}}">{{$user->name}}</option>
         @endforeach
