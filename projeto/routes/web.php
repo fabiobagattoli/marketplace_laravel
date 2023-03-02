@@ -22,9 +22,10 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
     Route::prefix('stores')->group(function(){
 
         Route::get('/', [StoreController::class, 'index']);
-        Route::get('/create', [StoreController::class, 'create']);
-        Route::post('/store', [StoreController::class, 'store']);
         Route::post('/store', [StoreController::class, 'store'])->name('admin.stores.store');
+        Route::get('/create', [StoreController::class, 'create']);
+        Route::get('/edit/{store}', [StoreController::class, 'edit']);
+        Route::post('/update/{store}', [StoreController::class, 'update'])->name('admin.stores.update');
 
     });
 

@@ -1,5 +1,7 @@
+@extends('layouts.app')
 
-<table>
+@section('content')
+<table class="table table-striped">
     <thead>
         <tr>
             <th>#</th>
@@ -19,3 +21,4 @@
 </table>
 
 {{$stores->links()}}
+@endsection
